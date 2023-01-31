@@ -34,11 +34,7 @@ namespace MemoryGame
     }
     void CreateGrid()
     {
-      //Random random2 = new Random();
-
-      //List<string> listGridSize = SixPairs;
       gridSize = random.Next(1,4);
-
       //panel properties
       panel.Name = "TableLayoutPanel1";
       panel.Size = new System.Drawing.Size(228, 200);
@@ -161,9 +157,6 @@ namespace MemoryGame
         FirstClick.ForeColor = Color.Black;
         return;
       }
-      ////check if its 2nd click
-      //if (ClickedIcon.ForeColor == Color.Maroon && FirstClick != null)
-      //{  }
       SecondClick = ClickedIcon;
       SecondClick.ForeColor = Color.Black;
 
@@ -180,13 +173,9 @@ namespace MemoryGame
         pairs++;
 
       }
-      //if they dont match, turn them back red
+      //if they dont match, turn them back green
       else
       {
-        //FirstClick.ForeColor = Color.Maroon;
-        //SecondClick.ForeColor = Color.Maroon;
-        //FirstClick = null;
-        //SecondClick = null;
         icon_timer.Start();
         score--;
       }
@@ -194,7 +183,7 @@ namespace MemoryGame
       if (pairs == (2*(gridSize * gridSize)))
       {
 
-        Message Show("Hey! You win!! With the score of " + score);
+        MessageBox.Show("Hey! You win!! With the score of " + score);
 
         
       }
